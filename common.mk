@@ -1,7 +1,7 @@
 SRC = -c src/*.c
 INCS = -Iinclude -Isrc -Ishaders
 CFLAGS = -std=gnu99 -Wall -fPIC -DRGL_BUILD
-LIBS = -lepoxy -lm -lopenal
+LDFLAGS = -lepoxy -lm -lopenal
 
 OBJ = rgl.o \
       rgl_common.o \

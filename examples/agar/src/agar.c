@@ -88,7 +88,7 @@ void
 playPopSound(void) {
 	for(u32 i=0; i<POP_SOUND_SOURCE_POOL; ++i) {
 		if(!rglAudioSourceIsPlaying(&popSoundSources[i])) {
-			rglAudioSourceSetPitch(&popSoundSources[i], RGL_RAND_RANGE_F32(0.9f, 1.1f));
+			rglAudioSourceSetPitch(&popSoundSources[i], RGL_RAND_RANGE_F32(0.8f, 1.2f));
 			rglAudioSourcePlay(&popSoundSources[i]);
 			return;
 		}

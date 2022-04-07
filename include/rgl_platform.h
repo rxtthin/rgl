@@ -8,8 +8,15 @@
 
 	#include "x11/rgl_x11_context.h"
 	#include "x11/rgl_x11_input.h"
-#else
-	#error RGL currently supports only linux.
+#elif defined(_WIN32) || defined(WIN32)
+	#define RGL_PLATFORM_WINDOWS
+	#define RGL_PLATFORM_FUN(fun, ...) rglWin##fun(__VA_ARGS__)
+	#define RGL_PLATFORM_CONTEXT_T  rglWinContext
+
+	#include "win/rgl_win_context.h"
+	#include "win/rgl_win_input.h"
+#else 
+	#error RGL currently supports only linux and windows.
 #endif
 
 #endif /* __RGL_PLATFORM_H */
